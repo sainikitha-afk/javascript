@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World City Weather</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- MAIN PAGE -->
+  <div class="container">
+    <div class="header">
+      <h1>🌍 World City Weather</h1>
+      <p class="subtitle">Select a city to get real-time weather data</p>
+    </div>
+
+    <div class="select-wrapper">
+      <select id="city-select">
+        <option value="">— Select a City —</option>
+        <option value="London">🇬🇧 London</option>
+        <option value="New York">🇺🇸 New York</option>
+        <option value="Tokyo">🇯🇵 Tokyo</option>
+        <option value="Paris">🇫🇷 Paris</option>
+        <option value="Dubai">🇦🇪 Dubai</option>
+        <option value="Singapore">🇸🇬 Singapore</option>
+        <option value="Sydney">🇦🇺 Sydney</option>
+        <option value="Mumbai">🇮🇳 Mumbai</option>
+        <option value="Toronto">🇨🇦 Toronto</option>
+        <option value="Berlin">🇩🇪 Berlin</option>
+        <option value="Bangkok">🇹🇭 Bangkok</option>
+        <option value="Seoul">🇰🇷 Seoul</option>
+        <option value="Bangalore">🇮🇳 Bangalore</option>
+      </select>
+      <span class="select-arrow">↓</span>
+    </div>
+
+    <!-- Loading spinner -->
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <p>Fetching weather...</p>
+    </div>
+
+    <!-- Weather Card -->
+    <div id="weather-card" class="weather-card hidden">
+      <div class="card-top">
+        <div class="card-left">
+          <h2 id="city-name"></h2>
+          <p id="description"></p>
+          <p id="feels-like"></p>
+        </div>
+        <div class="card-right">
+          <img id="weather-icon" src="" alt="weather icon"/>
+          <span id="main-temp"></span>
+        </div>
+      </div>
+
+      <div class="temps">
+        <div class="temp-box">
+          <span class="label">🌡️ Min</span>
+          <span id="temp-min" class="value"></span>
+        </div>
+        <div class="temp-box">
+          <span class="label">🌡️ Max</span>
+          <span id="temp-max" class="value"></span>
+        </div>
+        <div class="temp-box">
+          <span class="label">💧 Humidity</span>
+          <span id="humidity" class="value"></span>
+        </div>
+        <div class="temp-box">
+          <span class="label">💨 Wind</span>
+          <span id="wind" class="value"></span>
+        </div>
+      </div>
+
+      <div id="rain-info" class="rain-box hidden"></div>
+
+      <div class="suggestion-box" id="suggestion-box"></div>
+    </div>
+
+    <p id="error-msg" class="error hidden">❌ City not found or API key not active yet.</p>
+  </div>
+
+  <!-- CHATBOT BUBBLE -->
+  <button class="chat-bubble" id="chat-toggle" aria-label="Open weather assistant">
+    <span class="bubble-icon">🤖</span>
+    <span class="bubble-dot" id="bubble-dot"></span>
+  </button>
+
+  <!-- CHATBOT WINDOW -->
+  <div class="chat-window hidden" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <span class="chat-avatar">🌤️</span>
+        <div>
+          <p class="chat-name">WeatherBot</p>
+          <p class="chat-status">Always online</p>
+        </div>
+      </div>
+      <button class="chat-close" id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg bot">
+        <span class="msg-avatar">🌤️</span>
+        <div class="msg-bubble">
+          Hey! 👋 I'm WeatherBot. Ask me anything like:<br/><br/>
+          <span class="suggestion-chip" onclick="fillInput(this)">Weather in Tokyo</span>
+          <span class="suggestion-chip" onclick="fillInput(this)">Compare London and Dubai</span>
+          <span class="suggestion-chip" onclick="fillInput(this)">What to wear in Mumbai</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-row">
+      <input
+        type="text"
+        id="chat-input"
+        placeholder="Ask about any city..."
+        autocomplete="off"
+      />
+      <button id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
