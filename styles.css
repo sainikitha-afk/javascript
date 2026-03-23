@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    width: 380px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Add button */
+#addBtn {
+    background: #3498db;
+}
+
+#addBtn:hover {
+    background: #2980b9;
+}
+
+/* Task item */
+li {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+/* Task text */
+.task-text {
+    flex: 1;
+}
+
+/* Completed */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Buttons */
+.actions button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+/* Specific buttons */
+.complete-btn {
+    background: #2ecc71;
+}
+
+.edit-btn {
+    background: #f39c12;
+}
+
+.delete-btn {
+    background: #e74c3c;
+}
