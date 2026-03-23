@@ -1,0 +1,27 @@
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    text-align: center;
+}
+
+#container {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Card */
+.post {
+    background: white;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* Loader */
+#loader {
+    margin: 20px;
+    font-weight: bold;
+    display: none;
+}

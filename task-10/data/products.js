@@ -1,0 +1,68 @@
+const products = [
+  {
+    id: 1,
+    name: 'MacBook Pro 14"',
+    category: 'laptop',
+    price: 189999,
+    emoji: '💻',
+    description: 'Apple M3 Pro chip, 18GB RAM, 512GB SSD. Supercharged for pros.',
+  },
+  {
+    id: 2,
+    name: 'iPhone 15 Pro',
+    category: 'phone',
+    price: 134900,
+    emoji: '📱',
+    description: 'Titanium design, A17 Pro chip, 48MP camera system.',
+  },
+  {
+    id: 3,
+    name: 'Sony WH-1000XM5',
+    category: 'audio',
+    price: 29990,
+    emoji: '🎧',
+    description: 'Industry-leading noise cancellation, 30hr battery life.',
+  },
+  {
+    id: 4,
+    name: 'Samsung Galaxy S24',
+    category: 'phone',
+    price: 79999,
+    emoji: '📲',
+    description: 'Snapdragon 8 Gen 3, 200MP camera, AI-powered features.',
+  },
+  {
+    id: 5,
+    name: 'iPad Pro M4',
+    category: 'accessory',
+    price: 109900,
+    emoji: '🖥️',
+    description: 'Ultra Retina XDR display, M4 chip, perfect for creatives.',
+  },
+  {
+    id: 6,
+    name: 'AirPods Pro 2',
+    category: 'audio',
+    price: 24900,
+    emoji: '🎵',
+    description: 'Adaptive transparency, personalized spatial audio, H2 chip.',
+  },
+  {
+    id: 7,
+    name: 'Dell XPS 15',
+    category: 'laptop',
+    price: 149999,
+    emoji: '🖥️',
+    description: 'Intel Core i9, RTX 4070, OLED display. Ultimate performance.',
+  },
+  {
+    id: 8,
+    name: 'MagSafe Charger',
+    category: 'accessory',
+    price: 3900,
+    emoji: '🔋',
+    description: 'Fast wireless charging up to 15W for iPhone 12 and later.',
+  },
+];
+
+export default products;

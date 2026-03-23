@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechStore — Electronics</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <span class="nav-logo">⚡ TechStore</span>
+    </div>
+    <div class="nav-center">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search products..."
+          autocomplete="off"
+        />
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="cart-btn" id="cart-toggle" aria-label="Open cart">
+        🛒 Cart
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout">
+
+    <!-- SIDEBAR FILTERS -->
+    <aside class="sidebar">
+      <h3 class="sidebar-title">Filter by</h3>
+
+      <div class="filter-group">
+        <p class="filter-label">Category</p>
+        <label class="filter-option">
+          <input type="radio" name="category" value="all" checked/> All
+        </label>
+        <label class="filter-option">
+          <input type="radio" name="category" value="laptop"/> Laptops
+        </label>
+        <label class="filter-option">
+          <input type="radio" name="category" value="phone"/> Phones
+        </label>
+        <label class="filter-option">
+          <input type="radio" name="category" value="audio"/> Audio
+        </label>
+        <label class="filter-option">
+          <input type="radio" name="category" value="accessory"/> Accessories
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <p class="filter-label">Max Price</p>
+        <input type="range" id="price-range" min="0" max="200000" value="200000" step="1000"/>
+        <p class="range-value">Up to ₹<span id="price-display">2,00,000</span></p>
+      </div>
+
+      <div class="filter-group">
+        <p class="filter-label">Sort by</p>
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="name-asc">Name: A → Z</option>
+        </select>
+      </div>
+
+      <button class="btn-reset" id="reset-filters">Reset Filters</button>
+    </aside>
+
+    <!-- PRODUCT GRID -->
+    <main class="main-content">
+      <div class="results-bar">
+        <p id="results-count"></p>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+      <p class="no-results hidden" id="no-results">
+        😕 No products match your search.
+      </p>
+    </main>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay hidden" id="cart-overlay"></div>
+  <aside class="cart-drawer hidden" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cart-close" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <!-- populated by JS -->
+    </div>
+
+    <div class="cart-empty hidden" id="cart-empty">
+      <p>🛒 Your cart is empty</p>
+      <span>Add some products!</span>
+    </div>
+
+    <div class="cart-footer" id="cart-footer">
+      <div class="coupon-row">
+        <input type="text" id="coupon-input" placeholder="Coupon code" />
+        <button id="coupon-apply">Apply</button>
+      </div>
+      <p class="coupon-msg" id="coupon-msg"></p>
+
+      <div class="price-breakdown">
+        <div class="price-row">
+          <span>Subtotal</span>
+          <span id="subtotal"></span>
+        </div>
+        <div class="price-row" id="discount-row" style="display:none">
+          <span>Discount</span>
+          <span id="discount-amount" class="green"></span>
+        </div>
+        <div class="price-row">
+          <span>Tax (18% GST)</span>
+          <span id="tax-amount"></span>
+        </div>
+        <div class="price-row total-row">
+          <span>Total</span>
+          <span id="total-amount"></span>
+        </div>
+      </div>
+
+      <button class="btn-checkout" id="checkout-btn">
+        Proceed to Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast hidden" id="toast"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
